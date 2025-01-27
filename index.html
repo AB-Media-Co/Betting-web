@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Popup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body.blur {
+            filter: blur(5px);
+            transition: filter 0.3s ease;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            /* Semi-transparent dark overlay */
+            backdrop-filter: blur(10px);
+            /* Blurs the content behind the popup */
+            -webkit-backdrop-filter: blur(10px);
+            /* For Safari support */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+
+
+        .popup {
+            background: linear-gradient(to bottom right, #ffffff, #e0f7fa);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            color: #1f2937;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8);
+            animation: popup-show 0.3s forwards;
+        }
+
+        @keyframes popup-show {
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .popup h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #14b8a6;
+        }
+
+        .popup p {
+            font-size: 1.125rem;
+            margin-bottom: 24px;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link.active {
+            color: #14b8a6;
+            /* Highlight color for active link */
+            font-weight: bold;
+            /* Make the active link stand out */
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* Smooth scrolling for anchor links */
+        }
+    </style>
+</head>
+
+<body class=" text-gray-800">
+    <div class="hidden md:block">
+        <div id="popup" class="popup-overlay ">
+            <div class="popup">
+                <h2>Welcome to Ultimate Betting</h2>
+                <p>Are you 18 years or older?</p>
+                <div class="flex justify-center space-x-4">
+                    <button id="yesButton"
+                        class="px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white rounded-lg font-semibold">Yes</button>
+                    <button id="noButton"
+                        class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg font-semibold">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mainContent" class="">
+            <header class="fixed backdrop-blur-xl top-0 w-full shadow-md py-4 z-50">
+                <nav class="flex justify-center space-x-8 text-lg font-medium">
+                    <a href="#section1" class="nav-link text-gray-100 hover:text-teal-200">Home</a>
+                    <a href="#section2" class="nav-link text-gray-100 hover:text-teal-200">Fantasy Journey</a>
+                    <a href="#section3" class="nav-link text-gray-100 hover:text-teal-200">How to Play</a>
+                    <a href="#section4" class="nav-link text-gray-100 hover:text-teal-200">About Us</a>
+                    <a href="#section5" class="nav-link text-gray-100 hover:text-teal-200">Testimonials</a>
+                    <a href="#section6" class="nav-link text-gray-100 hover:text-teal-200">FAQs</a>
+                </nav>
+            </header>
+
+
+            <section id="section1" class="relative py-16 px-6 h-[650px] text-gray-800">
+                <div class="absolute inset-0 bg-cover bg-center bg-fixed"
+                    style="background-image: url('/Images/header.jpg');">
+                    <div class="absolute inset-0"
+                        style="background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.8) 100%);">
+                    </div>
+                </div>
+                <div
+                    class="relative max-w-6xl h-full flex flex-col gap-6 justify-center items-center m-auto text-center text-white">
+                    <h2 class="text-5xl font-bold  drop-shadow-md">Unleash the Thrill of Fantasy Sports! </h2>
+                    <p class="text-lg leading-relaxed drop-shadow-md">
+                        Join & Create Your Cricket ID Now
+
+                    </p>
+                    <div class="flex gap-4">
+                        <input type="text" placeholder="Enter Mobile Number"
+                            class="h-[40px] px-[16px] py-[10px] rounded-[40px]  text-black">
+                        <button class="p-[10px] rounded-[40px]  text-black bg-[#6CF58F] text-black">Download
+                            App</button>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="section2" class="py-16 px-6 text-gray-800">
+                <div class="max-w-6xl mx-auto flex flex-col items-center gap-10 text-center">
+                    <!-- Heading -->
+                    <h2 class="text-4xl font-bold  tracking-tight leading-snug">
+                        Start Your Fantasy Sport Journey!
+                    </h2>
+
+                    <!-- Content Container -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 bg-gray-100 p-6 rounded-lg shadow-md">
+                        <!-- Image Section -->
+                        <img src="/Images/section2Img.jpg" alt="Fantasy Cricket"
+                            class="rounded-3xl object-cover max-w-full w-full md:w-1/2 h-72 md:h-[350px]">
+
+                        <!-- Text Content -->
+                        <div class="text-left font-normal">
+                            <p class="text-lg leading-relaxed">
+                                At <span class="font-semibold">Ganesh Book Exchange</span>, we know how deeply cricket
+                                resonates with every Indian heart.
+                                That’s why we bring you an exciting opportunity to take your love for the game to the
+                                next
+                                level!
+                            </p>
+                            <p class="text-lg leading-relaxed mt-4">
+                                Dive into the world of fantasy cricket and turn your cricket knowledge into rewarding
+                                experiences.
+                                Create your ultimate dream team using real player stats and strategies. Watch your team
+                                earn
+                                points
+                                as players perform live on the field!
+                            </p>
+                            <p class="text-lg leading-relaxed mt-4">
+                                Whether you're a seasoned cricket fan or just starting out in fantasy sports,
+                                <span class="font-semibold">Ganesh Book Exchange</span> is here to help you explore this
+                                thrilling world.
+                                We’ll guide you with the best resources, tips, and insights to sharpen your strategies
+                                and
+                                enhance your game.
+                            </p>
+                            <p class="text-lg leading-relaxed mt-4 font-bold">
+                                Unleash your cricket expertise today! Let your passion for cricket drive your success
+                                and experience the excitement of fantasy sports like never before.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="section3" class="py-16 px-6 bg-white text-gray-800">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Title Section -->
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl font-bold">How To Play Fantasy Sports?</h2>
+                        <h3 class="text-xl font-semibold mt-2">Play Fantasy Sport by following these simple steps</h3>
+                    </div>
+
+                    <!-- Steps Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg mb-4">
+                                <span class="text-2xl font-bold">1</span>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-2">Select a Match</h4>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Choose an upcoming match from your favourite sport.
+                            </p>
+                            <img src="/Images/select games.webp" alt="Step 1 Image" class="rounded-lg w-full">
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg mb-4">
+                                <span class="text-2xl font-bold">2</span>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-2">Create Team</h4>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Create your team with the best players using your skills.
+                            </p>
+                            <img src="/Images/create team.avif" alt="Step 2 Image" class="rounded-lg w-full">
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg mb-4">
+                                <span class="text-2xl font-bold">3</span>
+                            </div>
+                            <h4 class="text-lg font-semibold mb-2">Join League</h4>
+                            <p class="text-sm text-gray-600 mb-4">
+                                From a wide range of contests, choose the one you want to join.
+                            </p>
+                            <img src="/Images/winprize.avif" alt="Step 3 Image" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="section4" class="py-16 px-6 text-gray-800">
+                <div class="max-w-6xl mx-auto flex flex-col gap-4 text-center">
+                    <h2 class="text-4xl font-extrabold ">About Ganesh Book Exchange </h2>
+                    <!-- Content Container -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 bg-gray-100 p-8 rounded-lg shadow-lg">
+                        <!-- Image Section -->
+                        <img src="/Images/helmet.webp" alt="Fantasy Cricket"
+                            class="rounded-3xl object-cover max-w-full w-full md:w-1/2 h-72 md:h-[350px]">
+
+                        <!-- Text Content -->
+                        <div class="text-left font-normal space-y-4">
+                            <h3 class="text-2xl font-bold text-gray-800">
+                                Explore Fantasy Sports with Ganesh Book Exchange
+                            </h3>
+                            <p class="text-lg leading-relaxed text-gray-700">
+                                At <span class="font-semibold">Ganesh Book Exchange</span>, we bring you the ultimate
+                                gateway to the exciting world of fantasy sports, where strategy meets rewards. Whether
+                                you’re a fan of cricket, football, hockey, or kabaddi, our platform equips you with the
+                                tools and insights to build winning moments.
+                            </p>
+                            <p class="text-lg leading-relaxed text-gray-700">
+                                Dive into detailed player stats, tips, and resources to craft your dream team. Compete
+                                in
+                                thrilling contests, test your knowledge, and engage with a vibrant community of sports
+                                enthusiasts from across India.
+                            </p>
+                            <p class="text-lg leading-relaxed text-gray-700">
+                                Whether you're a seasoned fantasy player or stepping in for the first time, we make it
+                                simple and fun for everyone. With easy-to-follow guides and expert resources, we ensure
+                                your
+                                journey into fantasy sports is seamless and rewarding.
+                            </p>
+                            <p class="text-lg leading-relaxed text-gray-800 font-bold">
+                                Start your fantasy journey today and let your passion for sports lead you to exciting
+                                rewards and unforgettable experiences!
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="section5" class="py-16 px-6 bg-white text-gray-800">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Title -->
+                    <h2 class="text-4xl font-extrabold text-center mb-12">What Our Users Say?</h2>
+
+                    <!-- Testimonials Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Testimonial 1 -->
+                        <div class="flex items-center gap-4 bg-gray-100 p-6 rounded-lg shadow-md">
+                            <img src="/Images/profile.png" alt="John Doe" class="w-16 h-16 rounded-full object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold">John Doe</h4>
+                                <p class="text-sm text-gray-500">Software Engineer</p>
+                                <p class="mt-2 text-gray-700">
+                                    "I've been playing on Allout11 for many years and have won earlier too. I got my
+                                    winnings instantly into my bank account after the withdrawal."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="flex items-center gap-4 bg-gray-100 p-6 rounded-lg shadow-md">
+                            <img src="/Images/profile.png" alt="Jane Smith" class="w-16 h-16 rounded-full object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold">Jane Smith</h4>
+                                <p class="text-sm text-gray-500">Marketing Specialist</p>
+                                <p class="mt-2 text-gray-700">
+                                    "I used to always watch cricket and analyze the game. I'm glad my knowledge and
+                                    skills
+                                    got rewarded and I won the Mega Contest."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="flex items-center gap-4 bg-gray-100 p-6 rounded-lg shadow-md">
+                            <img src="/Images/profile.png" alt="John Doe" class="w-16 h-16 rounded-full object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold">John Doe</h4>
+                                <p class="text-sm text-gray-500">Software Engineer</p>
+                                <p class="mt-2 text-gray-700">
+                                    "I've been playing on Allout11 for many years and have won earlier too. I got my
+                                    winnings instantly into my bank account after the withdrawal."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="flex items-center gap-4 bg-gray-100 p-6 rounded-lg shadow-md">
+                            <img src="/Images/profile.png" alt="Jane Smith" class="w-16 h-16 rounded-full object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold">Jane Smith</h4>
+                                <p class="text-sm text-gray-500">Marketing Specialist</p>
+                                <p class="mt-2 text-gray-700">
+                                    "I used to always watch cricket and analyze the game. I'm glad my knowledge and
+                                    skills
+                                    got rewarded and I won the Mega Contest."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section6" class="py-16 px-6 text-gray-800">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Title -->
+                    <h2 class="text-4xl font-extrabold mb-6">Frequently Asked Questions</h2>
+
+                    <!-- FAQ Container -->
+                    <div class="space-y-4">
+                        <!-- FAQ 1 -->
+                        <div class="border-b border-gray-300">
+                            <button class="w-full text-left flex justify-between items-center py-4 text-lg font-medium"
+                                onclick="toggleFaq(1)">
+                                What is fantasy sports, and how does it work?
+                                <span class="text-gray-500 text-2xl transform transition-transform duration-300"
+                                    id="icon1">+</span>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="answer1">
+                                <p class="text-gray-600 text-base py-4">
+                                    Fantasy sports is an online game where you create a virtual team of real players.
+                                    The
+                                    performance of your team is based on the actual performance of players in live
+                                    matches.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="border-b border-gray-300">
+                            <button class="w-full text-left flex justify-between items-center py-4 text-lg font-medium"
+                                onclick="toggleFaq(2)">
+                                How do I start playing fantasy sports?
+                                <span class="text-gray-500 text-2xl transform transition-transform duration-300"
+                                    id="icon2">+</span>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="answer2">
+                                <p class="text-gray-600 text-base py-4">
+                                    To start, select a match, create your dream team using player stats, join a contest,
+                                    and
+                                    earn points based on your team's performance in the live game.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="border-b border-gray-300">
+                            <button class="w-full text-left flex justify-between items-center py-4 text-lg font-medium"
+                                onclick="toggleFaq(3)">
+                                Can I play for free or is there an entry fee?
+                                <span class="text-gray-500 text-2xl transform transition-transform duration-300"
+                                    id="icon3">+</span>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="answer3">
+                                <p class="text-gray-600 text-base py-4">
+                                    Most platforms offer both free and paid contests. You can choose a free contest to
+                                    practice or paid contests for higher rewards.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="border-b border-gray-300">
+                            <button class="w-full text-left flex justify-between items-center py-4 text-lg font-medium"
+                                onclick="toggleFaq(4)">
+                                How are winnings credited to my account?
+                                <span class="text-gray-500 text-2xl transform transition-transform duration-300"
+                                    id="icon4">+</span>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="answer4">
+                                <p class="text-gray-600 text-base py-4">
+                                    Winnings are credited to your wallet or directly to your bank account after
+                                    withdrawal,
+                                    depending on the platform's policy.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="border-b border-gray-300">
+                            <button class="w-full text-left flex justify-between items-center py-4 text-lg font-medium"
+                                onclick="toggleFaq(5)">
+                                Is fantasy sports legal in India?
+                                <span class="text-gray-500 text-2xl transform transition-transform duration-300"
+                                    id="icon5">+</span>
+                            </button>
+                            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out" id="answer5">
+                                <p class="text-gray-600 text-base py-4">
+                                    Fantasy sports are considered a game of skill and are legal in most parts of India.
+                                    However, some states may have restrictions, so check your local regulations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 py-6 text-center">
+                <div class="max-w-6xl mx-auto text-start flex flex-col gap-4  text-white">
+                    <h2 class="text-4xl font-extrabold ">Disclaimer</h2>
+                    <p>
+                        This game may be habit-forming or financially risky. Play responsibly. Allout11 is applicable
+                        only
+                        to users 18+ only. These services are not available in Andhra Pradesh, Assam, Nagaland, Odisha,
+                        Sikkim, and Telangana as the law in these states prohibits them. Participation in Allout11
+                        contests
+                        is governed by the terms and conditions provided specifically on the website.
+                    </p>
+
+                    <p class="text-lg font-medium text-gray-100">&copy; 2025 Ultimate Betting Experience. All rights
+                        reserved
+                    </p>
+
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+
+    <img src="/Images/mobimg.jpg" alt="" class="md:hidden">
+
+    <script>
+        document.getElementById('yesButton').addEventListener('click', function () {
+            if (window.innerWidth >= 768) { // Only for md and above
+                document.getElementById('popup').style.display = 'none';
+                document.getElementById('mainContent').classList.remove('hidden');
+                setTimeout(function () {
+                    window.location.href = 'https://wa.me/9548538596';
+                }, 7000);
+            }
+        });
+        document.querySelector('.md\\:hidden').addEventListener('click', function () {
+            if (window.innerWidth < 768) { // Only for mobile
+                window.location.href = 'https://wa.me/9548538596';
+            }
+        });
+
+        document.getElementById('noButton').addEventListener('click', function () {
+            alert('You must be 18+ to access this website.');
+            window.close();
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let fromTop = window.scrollY;
+
+            navLinks.forEach(link => {
+                let section = document.querySelector(link.getAttribute('href'));
+
+                if (
+                    section.offsetTop <= fromTop + 100 &&
+                    section.offsetTop + section.offsetHeight > fromTop + 100
+                ) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        function toggleFaq(id) {
+            const answer = document.getElementById(`answer${id}`);
+            const icon = document.getElementById(`icon${id}`);
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                icon.textContent = "+";
+                icon.classList.remove("rotate-180");
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                icon.textContent = "−";
+                icon.classList.add("rotate-180");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
