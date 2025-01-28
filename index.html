@@ -467,15 +467,15 @@
             if (window.innerWidth >= 768) { // Only for md and above
                 document.getElementById('popup').style.display = 'none';
                 document.getElementById('mainContent').classList.remove('hidden');
-                // setTimeout(function () {
-                //     window.location.href = 'https://wa.me/';
-                // }, 7000);
+                setTimeout(function () {
+                    window.location.href = 'https://wa.me/';
+                }, 7000);
             }
         });
         document.querySelector('.md\\:hidden').addEventListener('click', function () {
-            // if (window.innerWidth < 768) { // Only for mobile
-            //     window.location.href = 'https://wa.me/';
-            // }
+            if (window.innerWidth < 768) { // Only for mobile
+                window.location.href = 'https://wa.me/';
+            }
         });
 
         document.getElementById('noButton').addEventListener('click', function () {
